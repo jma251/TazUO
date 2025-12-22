@@ -185,7 +185,9 @@ namespace ClassicUO.Game.Scenes
 
         private bool DragSelectModifierActive()
         {
-            // src: https://github.com/andreakarasho/ClassicUO/issues/621
+            Keyboard.RefreshModifiers();
+
+	    // src: https://github.com/andreakarasho/ClassicUO/issues/621
             // drag-select should be disabled when using nameplates
             if ((Keyboard.Ctrl && Keyboard.Shift) && ProfileManager.CurrentProfile.DragSelect_NameplateModifier == 0)
             {
@@ -217,7 +219,9 @@ namespace ClassicUO.Game.Scenes
 
         private void DoDragSelect()
         {
-            bool ctrl = Keyboard.Ctrl;
+            Keyboard.RefreshModifiers();
+
+	    bool ctrl = Keyboard.Ctrl;
             bool shift = Keyboard.Shift;
             bool alt = Keyboard.Alt;
 
